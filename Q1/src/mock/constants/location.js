@@ -1,6 +1,452 @@
-export const statesArr = ['Alabama','Alaska','American Samoa','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Federated States of Micronesia','Florida','Georgia','Guam','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Marshall Islands','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Northern Mariana Islands','Ohio','Oklahoma','Oregon','Palau','Pennsylvania','Puerto Rico','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virgin Island','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
-export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", "Ann Arbor", "Antioch", "Apple Valley", "Appleton", "Arlington", "Arvada", "Asheville", "Athens", "Atlanta", "Atlantic City", "Augusta", "Aurora", "Austin", "Bakersfield", "Baltimore", "Barnstable", "Baton Rouge", "Beaumont", "Bel Air", "Bellevue", "Berkeley", "Bethlehem", "Billings", "Birmingham", "Bloomington", "Boise", "Boise City", "Bonita Springs", "Boston", "Boulder", "Bradenton", "Bremerton", "Bridgeport", "Brighton", "Brownsville", "Bryan", "Buffalo", "Burbank", "Burlington", "Cambridge", "Canton", "Cape Coral", "Carrollton", "Cary", "Cathedral City", "Cedar Rapids", "Champaign", "Chandler", "Charleston", "Charlotte", "Chattanooga", "Chesapeake", "Chicago", "Chula Vista", "Cincinnati", "Clarke County", "Clarksville", "Clearwater", "Cleveland", "College Station", "Colorado Springs", "Columbia", "Columbus", "Concord", "Coral Springs", "Corona", "Corpus Christi", "Costa Mesa", "Dallas", "Daly City", "Danbury", "Davenport", "Davidson County", "Dayton", "Daytona Beach", "Deltona", "Denton", "Denver", "Des Moines", "Detroit", "Downey", "Duluth", "Durham", "El Monte", "El Paso", "Elizabeth", "Elk Grove", "Elkhart", "Erie", "Escondido", "Eugene", "Evansville", "Fairfield", "Fargo", "Fayetteville", "Fitchburg", "Flint", "Fontana", "Fort Collins", "Fort Lauderdale", "Fort Smith", "Fort Walton Beach", "Fort Wayne", "Fort Worth", "Frederick", "Fremont", "Fresno", "Fullerton", "Gainesville", "Garden Grove", "Garland", "Gastonia", "Gilbert", "Glendale", "Grand Prairie", "Grand Rapids", "Grayslake", "Green Bay", "GreenBay", "Greensboro", "Greenville", "Gulfport-Biloxi", "Hagerstown", "Hampton", "Harlingen", "Harrisburg", "Hartford", "Havre de Grace", "Hayward", "Hemet", "Henderson", "Hesperia", "Hialeah", "Hickory", "High Point", "Hollywood", "Honolulu", "Houma", "Houston", "Howell", "Huntington", "Huntington Beach", "Huntsville", "Independence", "Indianapolis", "Inglewood", "Irvine", "Irving", "Jackson", "Jacksonville", "Jefferson", "Jersey City", "Johnson City", "Joliet", "Kailua", "Kalamazoo", "Kaneohe", "Kansas City", "Kennewick", "Kenosha", "Killeen", "Kissimmee", "Knoxville", "Lacey", "Lafayette", "Lake Charles", "Lakeland", "Lakewood", "Lancaster", "Lansing", "Laredo", "Las Cruces", "Las Vegas", "Layton", "Leominster", "Lewisville", "Lexington", "Lincoln", "Little Rock", "Long Beach", "Lorain", "Los Angeles", "Louisville", "Lowell", "Lubbock", "Macon", "Madison", "Manchester", "Marina", "Marysville", "McAllen", "McHenry", "Medford", "Melbourne", "Memphis", "Merced", "Mesa", "Mesquite", "Miami", "Milwaukee", "Minneapolis", "Miramar", "Mission Viejo", "Mobile", "Modesto", "Monroe", "Monterey", "Montgomery", "Moreno Valley", "Murfreesboro", "Murrieta", "Muskegon", "Myrtle Beach", "Naperville", "Naples", "Nashua", "Nashville", "New Bedford", "New Haven", "New London", "New Orleans", "New York", "New York City", "Newark", "Newburgh", "Newport News", "Norfolk", "Normal", "Norman", "North Charleston", "North Las Vegas", "North Port", "Norwalk", "Norwich", "Oakland", "Ocala", "Oceanside", "Odessa", "Ogden", "Oklahoma City", "Olathe", "Olympia", "Omaha", "Ontario", "Orange", "Orem", "Orlando", "Overland Park", "Oxnard", "Palm Bay", "Palm Springs", "Palmdale", "Panama City", "Pasadena", "Paterson", "Pembroke Pines", "Pensacola", "Peoria", "Philadelphia", "Phoenix", "Pittsburgh", "Plano", "Pomona", "Pompano Beach", "Port Arthur", "Port Orange", "Port Saint Lucie", "Port St. Lucie", "Portland", "Portsmouth", "Poughkeepsie", "Providence", "Provo", "Pueblo", "Punta Gorda", "Racine", "Raleigh", "Rancho Cucamonga", "Reading", "Redding", "Reno", "Richland", "Richmond", "Richmond County", "Riverside", "Roanoke", "Rochester", "Rockford", "Roseville", "Round Lake Beach", "Sacramento", "Saginaw", "Saint Louis", "Saint Paul", "Saint Petersburg", "Salem", "Salinas", "Salt Lake City", "San Antonio", "San Bernardino", "San Buenaventura", "San Diego", "San Francisco", "San Jose", "Santa Ana", "Santa Barbara", "Santa Clara", "Santa Clarita", "Santa Cruz", "Santa Maria", "Santa Rosa", "Sarasota", "Savannah", "Scottsdale", "Scranton", "Seaside", "Seattle", "Sebastian", "Shreveport", "Simi Valley", "Sioux City", "Sioux Falls", "South Bend", "South Lyon", "Spartanburg", "Spokane", "Springdale", "Springfield", "St. Louis", "St. Paul", "St. Petersburg", "Stamford", "Sterling Heights", "Stockton", "Sunnyvale", "Syracuse", "Tacoma", "Tallahassee", "Tampa", "Temecula", "Tempe", "Thornton", "Thousand Oaks", "Toledo", "Topeka", "Torrance", "Trenton", "Tucson", "Tulsa", "Tuscaloosa", "Tyler", "Utica", "Vallejo", "Vancouver", "Vero Beach", "Victorville", "Virginia Beach", "Visalia", "Waco", "Warren", "Washington", "Waterbury", "Waterloo", "West Covina", "West Valley City", "Westminster", "Wichita", "Wilmington", "Winston", "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"];
- const statesAndCitesDataArr = {
+export const statesArr = [
+  "Alabama",
+  "Alaska",
+  "American Samoa",
+  "Arizona",
+  "Arkansas",
+  "California",
+  "Colorado",
+  "Connecticut",
+  "Delaware",
+  "District of Columbia",
+  "Federated States of Micronesia",
+  "Florida",
+  "Georgia",
+  "Guam",
+  "Hawaii",
+  "Idaho",
+  "Illinois",
+  "Indiana",
+  "Iowa",
+  "Kansas",
+  "Kentucky",
+  "Louisiana",
+  "Maine",
+  "Marshall Islands",
+  "Maryland",
+  "Massachusetts",
+  "Michigan",
+  "Minnesota",
+  "Mississippi",
+  "Missouri",
+  "Montana",
+  "Nebraska",
+  "Nevada",
+  "New Hampshire",
+  "New Jersey",
+  "New Mexico",
+  "New York",
+  "North Carolina",
+  "North Dakota",
+  "Northern Mariana Islands",
+  "Ohio",
+  "Oklahoma",
+  "Oregon",
+  "Palau",
+  "Pennsylvania",
+  "Puerto Rico",
+  "Rhode Island",
+  "South Carolina",
+  "South Dakota",
+  "Tennessee",
+  "Texas",
+  "Utah",
+  "Vermont",
+  "Virgin Island",
+  "Virginia",
+  "Washington",
+  "West Virginia",
+  "Wisconsin",
+  "Wyoming",
+];
+export const majorCitiesArr = [
+  "Aberdeen",
+  "Abilene",
+  "Akron",
+  "Albany",
+  "Albuquerque",
+  "Alexandria",
+  "Allentown",
+  "Amarillo",
+  "Anaheim",
+  "Anchorage",
+  "Ann Arbor",
+  "Antioch",
+  "Apple Valley",
+  "Appleton",
+  "Arlington",
+  "Arvada",
+  "Asheville",
+  "Athens",
+  "Atlanta",
+  "Atlantic City",
+  "Augusta",
+  "Aurora",
+  "Austin",
+  "Bakersfield",
+  "Baltimore",
+  "Barnstable",
+  "Baton Rouge",
+  "Beaumont",
+  "Bel Air",
+  "Bellevue",
+  "Berkeley",
+  "Bethlehem",
+  "Billings",
+  "Birmingham",
+  "Bloomington",
+  "Boise",
+  "Boise City",
+  "Bonita Springs",
+  "Boston",
+  "Boulder",
+  "Bradenton",
+  "Bremerton",
+  "Bridgeport",
+  "Brighton",
+  "Brownsville",
+  "Bryan",
+  "Buffalo",
+  "Burbank",
+  "Burlington",
+  "Cambridge",
+  "Canton",
+  "Cape Coral",
+  "Carrollton",
+  "Cary",
+  "Cathedral City",
+  "Cedar Rapids",
+  "Champaign",
+  "Chandler",
+  "Charleston",
+  "Charlotte",
+  "Chattanooga",
+  "Chesapeake",
+  "Chicago",
+  "Chula Vista",
+  "Cincinnati",
+  "Clarke County",
+  "Clarksville",
+  "Clearwater",
+  "Cleveland",
+  "College Station",
+  "Colorado Springs",
+  "Columbia",
+  "Columbus",
+  "Concord",
+  "Coral Springs",
+  "Corona",
+  "Corpus Christi",
+  "Costa Mesa",
+  "Dallas",
+  "Daly City",
+  "Danbury",
+  "Davenport",
+  "Davidson County",
+  "Dayton",
+  "Daytona Beach",
+  "Deltona",
+  "Denton",
+  "Denver",
+  "Des Moines",
+  "Detroit",
+  "Downey",
+  "Duluth",
+  "Durham",
+  "El Monte",
+  "El Paso",
+  "Elizabeth",
+  "Elk Grove",
+  "Elkhart",
+  "Erie",
+  "Escondido",
+  "Eugene",
+  "Evansville",
+  "Fairfield",
+  "Fargo",
+  "Fayetteville",
+  "Fitchburg",
+  "Flint",
+  "Fontana",
+  "Fort Collins",
+  "Fort Lauderdale",
+  "Fort Smith",
+  "Fort Walton Beach",
+  "Fort Wayne",
+  "Fort Worth",
+  "Frederick",
+  "Fremont",
+  "Fresno",
+  "Fullerton",
+  "Gainesville",
+  "Garden Grove",
+  "Garland",
+  "Gastonia",
+  "Gilbert",
+  "Glendale",
+  "Grand Prairie",
+  "Grand Rapids",
+  "Grayslake",
+  "Green Bay",
+  "GreenBay",
+  "Greensboro",
+  "Greenville",
+  "Gulfport-Biloxi",
+  "Hagerstown",
+  "Hampton",
+  "Harlingen",
+  "Harrisburg",
+  "Hartford",
+  "Havre de Grace",
+  "Hayward",
+  "Hemet",
+  "Henderson",
+  "Hesperia",
+  "Hialeah",
+  "Hickory",
+  "High Point",
+  "Hollywood",
+  "Honolulu",
+  "Houma",
+  "Houston",
+  "Howell",
+  "Huntington",
+  "Huntington Beach",
+  "Huntsville",
+  "Independence",
+  "Indianapolis",
+  "Inglewood",
+  "Irvine",
+  "Irving",
+  "Jackson",
+  "Jacksonville",
+  "Jefferson",
+  "Jersey City",
+  "Johnson City",
+  "Joliet",
+  "Kailua",
+  "Kalamazoo",
+  "Kaneohe",
+  "Kansas City",
+  "Kennewick",
+  "Kenosha",
+  "Killeen",
+  "Kissimmee",
+  "Knoxville",
+  "Lacey",
+  "Lafayette",
+  "Lake Charles",
+  "Lakeland",
+  "Lakewood",
+  "Lancaster",
+  "Lansing",
+  "Laredo",
+  "Las Cruces",
+  "Las Vegas",
+  "Layton",
+  "Leominster",
+  "Lewisville",
+  "Lexington",
+  "Lincoln",
+  "Little Rock",
+  "Long Beach",
+  "Lorain",
+  "Los Angeles",
+  "Louisville",
+  "Lowell",
+  "Lubbock",
+  "Macon",
+  "Madison",
+  "Manchester",
+  "Marina",
+  "Marysville",
+  "McAllen",
+  "McHenry",
+  "Medford",
+  "Melbourne",
+  "Memphis",
+  "Merced",
+  "Mesa",
+  "Mesquite",
+  "Miami",
+  "Milwaukee",
+  "Minneapolis",
+  "Miramar",
+  "Mission Viejo",
+  "Mobile",
+  "Modesto",
+  "Monroe",
+  "Monterey",
+  "Montgomery",
+  "Moreno Valley",
+  "Murfreesboro",
+  "Murrieta",
+  "Muskegon",
+  "Myrtle Beach",
+  "Naperville",
+  "Naples",
+  "Nashua",
+  "Nashville",
+  "New Bedford",
+  "New Haven",
+  "New London",
+  "New Orleans",
+  "New York",
+  "New York City",
+  "Newark",
+  "Newburgh",
+  "Newport News",
+  "Norfolk",
+  "Normal",
+  "Norman",
+  "North Charleston",
+  "North Las Vegas",
+  "North Port",
+  "Norwalk",
+  "Norwich",
+  "Oakland",
+  "Ocala",
+  "Oceanside",
+  "Odessa",
+  "Ogden",
+  "Oklahoma City",
+  "Olathe",
+  "Olympia",
+  "Omaha",
+  "Ontario",
+  "Orange",
+  "Orem",
+  "Orlando",
+  "Overland Park",
+  "Oxnard",
+  "Palm Bay",
+  "Palm Springs",
+  "Palmdale",
+  "Panama City",
+  "Pasadena",
+  "Paterson",
+  "Pembroke Pines",
+  "Pensacola",
+  "Peoria",
+  "Philadelphia",
+  "Phoenix",
+  "Pittsburgh",
+  "Plano",
+  "Pomona",
+  "Pompano Beach",
+  "Port Arthur",
+  "Port Orange",
+  "Port Saint Lucie",
+  "Port St. Lucie",
+  "Portland",
+  "Portsmouth",
+  "Poughkeepsie",
+  "Providence",
+  "Provo",
+  "Pueblo",
+  "Punta Gorda",
+  "Racine",
+  "Raleigh",
+  "Rancho Cucamonga",
+  "Reading",
+  "Redding",
+  "Reno",
+  "Richland",
+  "Richmond",
+  "Richmond County",
+  "Riverside",
+  "Roanoke",
+  "Rochester",
+  "Rockford",
+  "Roseville",
+  "Round Lake Beach",
+  "Sacramento",
+  "Saginaw",
+  "Saint Louis",
+  "Saint Paul",
+  "Saint Petersburg",
+  "Salem",
+  "Salinas",
+  "Salt Lake City",
+  "San Antonio",
+  "San Bernardino",
+  "San Buenaventura",
+  "San Diego",
+  "San Francisco",
+  "San Jose",
+  "Santa Ana",
+  "Santa Barbara",
+  "Santa Clara",
+  "Santa Clarita",
+  "Santa Cruz",
+  "Santa Maria",
+  "Santa Rosa",
+  "Sarasota",
+  "Savannah",
+  "Scottsdale",
+  "Scranton",
+  "Seaside",
+  "Seattle",
+  "Sebastian",
+  "Shreveport",
+  "Simi Valley",
+  "Sioux City",
+  "Sioux Falls",
+  "South Bend",
+  "South Lyon",
+  "Spartanburg",
+  "Spokane",
+  "Springdale",
+  "Springfield",
+  "St. Louis",
+  "St. Paul",
+  "St. Petersburg",
+  "Stamford",
+  "Sterling Heights",
+  "Stockton",
+  "Sunnyvale",
+  "Syracuse",
+  "Tacoma",
+  "Tallahassee",
+  "Tampa",
+  "Temecula",
+  "Tempe",
+  "Thornton",
+  "Thousand Oaks",
+  "Toledo",
+  "Topeka",
+  "Torrance",
+  "Trenton",
+  "Tucson",
+  "Tulsa",
+  "Tuscaloosa",
+  "Tyler",
+  "Utica",
+  "Vallejo",
+  "Vancouver",
+  "Vero Beach",
+  "Victorville",
+  "Virginia Beach",
+  "Visalia",
+  "Waco",
+  "Warren",
+  "Washington",
+  "Waterbury",
+  "Waterloo",
+  "West Covina",
+  "West Valley City",
+  "Westminster",
+  "Wichita",
+  "Wilmington",
+  "Winston",
+  "Winter Haven",
+  "Worcester",
+  "Yakima",
+  "Yonkers",
+  "York",
+  "Youngstown",
+];
+const statesAndCitesDataArr = {
   "New York": [
     "New York",
     "Buffalo",
@@ -18,9 +464,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Niagara Falls",
     "Binghamton",
     "Freeport",
-    "Valley Stream"
+    "Valley Stream",
   ],
-  "California": [
+  California: [
     "Los Angeles",
     "San Diego",
     "San Jose",
@@ -233,9 +679,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Oakley",
     "Monrovia",
     "Los Banos",
-    "Martinez"
+    "Martinez",
   ],
-  "Illinois": [
+  Illinois: [
     "Chicago",
     "Aurora",
     "Rockford",
@@ -287,9 +733,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Wheeling",
     "Park Ridge",
     "Addison",
-    "Calumet City"
+    "Calumet City",
   ],
-  "Texas": [
+  Texas: [
     "Houston",
     "San Antonio",
     "Dallas",
@@ -372,9 +818,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Lancaster",
     "Texarkana",
     "Friendswood",
-    "Weslaco"
+    "Weslaco",
   ],
-  "Pennsylvania": [
+  Pennsylvania: [
     "Philadelphia",
     "Pittsburgh",
     "Allentown",
@@ -387,9 +833,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Altoona",
     "York",
     "State College",
-    "Wilkes-Barre"
+    "Wilkes-Barre",
   ],
-  "Arizona": [
+  Arizona: [
     "Phoenix",
     "Tucson",
     "Mesa",
@@ -414,9 +860,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Bullhead City",
     "Prescott Valley",
     "Marana",
-    "Apache Junction"
+    "Apache Junction",
   ],
-  "Florida": [
+  Florida: [
     "Jacksonville",
     "Miami",
     "Tampa",
@@ -488,9 +934,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Ocoee",
     "Hallandale Beach",
     "Winter Garden",
-    "Aventura"
+    "Aventura",
   ],
-  "Indiana": [
+  Indiana: [
     "Indianapolis",
     "Fort Wayne",
     "Evansville",
@@ -512,9 +958,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Lawrence",
     "Jeffersonville",
     "Columbus",
-    "Portage"
+    "Portage",
   ],
-  "Ohio": [
+  Ohio: [
     "Columbus",
     "Cleveland",
     "Cincinnati",
@@ -548,7 +994,7 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Huber Heights",
     "Westerville",
     "Marion",
-    "Grove City"
+    "Grove City",
   ],
   "North Carolina": [
     "Charlotte",
@@ -573,9 +1019,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Kannapolis",
     "Apex",
     "Hickory",
-    "Goldsboro"
+    "Goldsboro",
   ],
-  "Michigan": [
+  Michigan: [
     "Detroit",
     "Grand Rapids",
     "Warren",
@@ -606,9 +1052,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Portage",
     "Midland",
     "Lincoln Park",
-    "Muskegon"
+    "Muskegon",
   ],
-  "Tennessee": [
+  Tennessee: [
     "Memphis",
     "Nashville-Davidson",
     "Knoxville",
@@ -625,9 +1071,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Cleveland",
     "Smyrna",
     "Germantown",
-    "Brentwood"
+    "Brentwood",
   ],
-  "Massachusetts": [
+  Massachusetts: [
     "Boston",
     "Worcester",
     "Springfield",
@@ -663,9 +1109,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Holyoke",
     "Marlborough",
     "Woburn",
-    "Chelsea"
+    "Chelsea",
   ],
-  "Washington": [
+  Washington: [
     "Seattle",
     "Spokane",
     "Tacoma",
@@ -693,9 +1139,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Lacey",
     "Edmonds",
     "Bremerton",
-    "Puyallup"
+    "Puyallup",
   ],
-  "Colorado": [
+  Colorado: [
     "Denver",
     "Colorado Springs",
     "Aurora",
@@ -716,28 +1162,26 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Commerce City",
     "Parker",
     "Littleton",
-    "Northglenn"
+    "Northglenn",
   ],
-  "District of Columbia": [
-    "Washington"
-  ],
-  "Maryland": [
+  "District of Columbia": ["Washington"],
+  Maryland: [
     "Baltimore",
     "Frederick",
     "Rockville",
     "Gaithersburg",
     "Bowie",
     "Hagerstown",
-    "Annapolis"
+    "Annapolis",
   ],
-  "Kentucky": [
+  Kentucky: [
     "Louisville/Jefferson County",
     "Lexington-Fayette",
     "Bowling Green",
     "Owensboro",
-    "Covington"
+    "Covington",
   ],
-  "Oregon": [
+  Oregon: [
     "Portland",
     "Eugene",
     "Salem",
@@ -751,9 +1195,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Albany",
     "Tigard",
     "Lake Oswego",
-    "Keizer"
+    "Keizer",
   ],
-  "Oklahoma": [
+  Oklahoma: [
     "Oklahoma City",
     "Tulsa",
     "Norman",
@@ -764,9 +1208,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Midwest City",
     "Enid",
     "Stillwater",
-    "Muskogee"
+    "Muskogee",
   ],
-  "Wisconsin": [
+  Wisconsin: [
     "Milwaukee",
     "Madison",
     "Green Bay",
@@ -786,15 +1230,15 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Wausau",
     "Brookfield",
     "Greenfield",
-    "Beloit"
+    "Beloit",
   ],
-  "Nevada": [
+  Nevada: [
     "Las Vegas",
     "Henderson",
     "Reno",
     "North Las Vegas",
     "Sparks",
-    "Carson City"
+    "Carson City",
   ],
   "New Mexico": [
     "Albuquerque",
@@ -803,9 +1247,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Santa Fe",
     "Roswell",
     "Farmington",
-    "Clovis"
+    "Clovis",
   ],
-  "Missouri": [
+  Missouri: [
     "Kansas City",
     "St. Louis",
     "Springfield",
@@ -821,9 +1265,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Joplin",
     "Chesterfield",
     "Jefferson City",
-    "Cape Girardeau"
+    "Cape Girardeau",
   ],
-  "Virginia": [
+  Virginia: [
     "Virginia Beach",
     "Norfolk",
     "Chesapeake",
@@ -840,9 +1284,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Charlottesville",
     "Danville",
     "Blacksburg",
-    "Manassas"
+    "Manassas",
   ],
-  "Georgia": [
+  Georgia: [
     "Atlanta",
     "Columbus",
     "Augusta-Richmond County",
@@ -858,15 +1302,10 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Marietta",
     "Valdosta",
     "Smyrna",
-    "Dunwoody"
+    "Dunwoody",
   ],
-  "Nebraska": [
-    "Omaha",
-    "Lincoln",
-    "Bellevue",
-    "Grand Island"
-  ],
-  "Minnesota": [
+  Nebraska: ["Omaha", "Lincoln", "Bellevue", "Grand Island"],
+  Minnesota: [
     "Minneapolis",
     "St. Paul",
     "Rochester",
@@ -890,9 +1329,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Mankato",
     "Maplewood",
     "Moorhead",
-    "Shakopee"
+    "Shakopee",
   ],
-  "Kansas": [
+  Kansas: [
     "Wichita",
     "Overland Park",
     "Kansas City",
@@ -903,9 +1342,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Manhattan",
     "Lenexa",
     "Salina",
-    "Hutchinson"
+    "Hutchinson",
   ],
-  "Louisiana": [
+  Louisiana: [
     "New Orleans",
     "Baton Rouge",
     "Shreveport",
@@ -914,14 +1353,10 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Kenner",
     "Bossier City",
     "Monroe",
-    "Alexandria"
+    "Alexandria",
   ],
-  "Hawaii": [
-    "Honolulu"
-  ],
-  "Alaska": [
-    "Anchorage"
-  ],
+  Hawaii: ["Honolulu"],
+  Alaska: ["Anchorage"],
   "New Jersey": [
     "Newark",
     "Jersey City",
@@ -944,9 +1379,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Sayreville",
     "Kearny",
     "Linden",
-    "Atlantic City"
+    "Atlantic City",
   ],
-  "Idaho": [
+  Idaho: [
     "Boise City",
     "Nampa",
     "Meridian",
@@ -954,9 +1389,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Pocatello",
     "Caldwell",
     "Coeur d'Alene",
-    "Twin Falls"
+    "Twin Falls",
   ],
-  "Alabama": [
+  Alabama: [
     "Birmingham",
     "Montgomery",
     "Mobile",
@@ -968,9 +1403,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Decatur",
     "Madison",
     "Florence",
-    "Gadsden"
+    "Gadsden",
   ],
-  "Iowa": [
+  Iowa: [
     "Des Moines",
     "Cedar Rapids",
     "Davenport",
@@ -983,9 +1418,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Dubuque",
     "Ankeny",
     "Urbandale",
-    "Cedar Falls"
+    "Cedar Falls",
   ],
-  "Arkansas": [
+  Arkansas: [
     "Little Rock",
     "Fort Smith",
     "Fayetteville",
@@ -995,9 +1430,9 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Conway",
     "Rogers",
     "Pine Bluff",
-    "Bentonville"
+    "Bentonville",
   ],
-  "Utah": [
+  Utah: [
     "Salt Lake City",
     "West Valley City",
     "Provo",
@@ -1015,7 +1450,7 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Draper",
     "Bountiful",
     "Riverton",
-    "Roy"
+    "Roy",
   ],
   "Rhode Island": [
     "Providence",
@@ -1023,21 +1458,18 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Cranston",
     "Pawtucket",
     "East Providence",
-    "Woonsocket"
+    "Woonsocket",
   ],
-  "Mississippi": [
+  Mississippi: [
     "Jackson",
     "Gulfport",
     "Southaven",
     "Hattiesburg",
     "Biloxi",
-    "Meridian"
+    "Meridian",
   ],
-  "South Dakota": [
-    "Sioux Falls",
-    "Rapid City"
-  ],
-  "Connecticut": [
+  "South Dakota": ["Sioux Falls", "Rapid City"],
+  Connecticut: [
     "Bridgeport",
     "New Haven",
     "Stamford",
@@ -1052,7 +1484,7 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Milford",
     "Middletown",
     "Norwich",
-    "Shelton"
+    "Shelton",
   ],
   "South Carolina": [
     "Columbia",
@@ -1066,61 +1498,34 @@ export const majorCitiesArr = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuqu
     "Goose Creek",
     "Hilton Head Island",
     "Florence",
-    "Spartanburg"
+    "Spartanburg",
   ],
-  "New Hampshire": [
-    "Manchester",
-    "Nashua",
-    "Concord"
-  ],
-  "North Dakota": [
-    "Fargo",
-    "Bismarck",
-    "Grand Forks",
-    "Minot"
-  ],
-  "Montana": [
-    "Billings",
-    "Missoula",
-    "Great Falls",
-    "Bozeman"
-  ],
-  "Delaware": [
-    "Wilmington",
-    "Dover"
-  ],
-  "Maine": [
-    "Portland"
-  ],
-  "Wyoming": [
-    "Cheyenne",
-    "Casper"
-  ],
-  "West Virginia": [
-    "Charleston",
-    "Huntington"
-  ],
-  "Vermont": [
-    "Burlington"
-  ]
-}
-
-const typeArray = ["Apartment", "Single-family", "Townhomes", "Condo"]
-
-function getRandom(arrayData){
-  return arrayData[Math.floor(Math.random()*arrayData.length)] ;
+  "New Hampshire": ["Manchester", "Nashua", "Concord"],
+  "North Dakota": ["Fargo", "Bismarck", "Grand Forks", "Minot"],
+  Montana: ["Billings", "Missoula", "Great Falls", "Bozeman"],
+  Delaware: ["Wilmington", "Dover"],
+  Maine: ["Portland"],
+  Wyoming: ["Cheyenne", "Casper"],
+  "West Virginia": ["Charleston", "Huntington"],
+  Vermont: ["Burlington"],
 };
-export const mockData = ()=>{
-  const obj = []
-  for(let i=0;i<500;i++){
-    const state = getRandom(Object.keys(statesAndCitesDataArr))
-    obj.push({
-      id:i+1,
-      state,
-      city:getRandom(statesAndCitesDataArr[state]),
-      type:getRandom(typeArray),
-      price:Math.floor(Math.random()*1000*i)
-    })
-  }
-  return obj
+
+const typeArray = ["Apartment", "Single-family", "Townhomes", "Condo"];
+
+function getRandom(arrayData) {
+  return arrayData[Math.floor(Math.random() * arrayData.length)];
 }
+export const mockData = () => {
+  const obj = [];
+  for (let i = 0; i < 500; i++) {
+    const state = getRandom(Object.keys(statesAndCitesDataArr));
+    obj.push({
+      id: i + 1,
+      state,
+      city: getRandom(statesAndCitesDataArr[state]),
+      type: getRandom(typeArray),
+      price: Math.floor(Math.random() * 100 * i + 300),
+    });
+  }
+  return obj;
+};

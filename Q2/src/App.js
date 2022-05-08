@@ -14,46 +14,6 @@ export default function App() {
     };
     fetchFunc();
   }, []);
-  const sliderProps = {
-    range: true,
-    defaultValue: [0, 500000],
-    min: 0,
-    max: 500000,
-    onChange: (values) => {
-      // console.log(values,record);
-    },
-    tipFormatter: (value) => {
-      return value;
-    },
-  };
-  const slider = () => (
-    <div
-      className="custom-filter-dropdown ant-table-filter-dropdown"
-      style={{ minWidth: "20rem", padding: "0.5rem 1rem" }}
-    >
-      <Row>
-        <Col span={4}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div>
-              <strong>Min:</strong>
-            </div>
-            <div>0</div>
-          </div>
-        </Col>
-        <Col span={16}>
-          <Slider {...sliderProps} />
-        </Col>
-        <Col span={4}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div>
-              <strong>Max:</strong>
-            </div>
-            <div>500000</div>
-          </div>
-        </Col>
-      </Row>
-    </div>
-  );
 
   const columns = [
     {
@@ -69,12 +29,13 @@ export default function App() {
           <>
             <Input
               autoFocus
-              placeholder="Type text here"
+              placeholder="Type state here"
               value={selectedKeys[0]}
               onChange={(e) => {
                 setSelectedKeys(e.target.value ? [e.target.value] : []);
                 confirm({ closeDropdown: false });
               }}
+              data-testid="searchByState"
               onPressEnter={() => {
                 confirm();
               }}
@@ -121,7 +82,7 @@ export default function App() {
           <>
             <Input
               autoFocus
-              placeholder="Type text here"
+              placeholder="Type city here"
               value={selectedKeys[0]}
               onChange={(e) => {
                 setSelectedKeys(e.target.value ? [e.target.value] : []);
@@ -173,7 +134,7 @@ export default function App() {
           <div style={{ display: "flex", flex: 1, justifyContent: "center" }}>
             <Input
               autoFocus
-              placeholder="Type text here"
+              placeholder="Type house type here"
               value={selectedKeys[0]}
               onChange={(e) => {
                 setSelectedKeys(e.target.value ? [e.target.value] : []);
@@ -275,6 +236,7 @@ export default function App() {
           style={{ display: "flex", flex: 1, margin: 10 }}
           columns={columns}
           dataSource={allResData}
+          rowKey="id"
         ></Table>
       </header>
     </div>
