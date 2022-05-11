@@ -18,7 +18,7 @@ export const StyleSpanTitle = styled.span`
     font-size: 14px;
     line-height: 20px;
     color:${themeBlueColor};
-    padding: 20px 6px;
+    padding: 10px 6px;
 `
 
 export const StyleSpanContent = styled.span`
@@ -28,7 +28,7 @@ export const StyleSpanContent = styled.span`
     font-size: 14px;
     line-height: 20px;
     color:${lightGrayColor};
-    padding: 20px 6px;
+    padding: 10px 6px;
 `
 
 export const StylePanelFooter = styled.div`

@@ -68,6 +68,7 @@ const Register: React.FC<Props> = ({ topics }) => {
                         size='large'
                         backgroundColor='lightGray'
                         textColor='darkGray'
+                        onClickFunc={()=>console.log(456)}
                     />
                 </StyleContentForm>
             </StyleContentContainer>
