@@ -5,6 +5,7 @@ import {
     StyleContentForm,
     StyleTitle,
     StyleContentContainer,
+    StyleErrorMessage,
 } from './style'
 interface Props {
     topics: string
@@ -68,7 +69,7 @@ const Register: React.FC<Props> = ({ topics }) => {
                         size='large'
                         backgroundColor='lightGray'
                         textColor='darkGray'
-                        onClickFunc={()=>console.log(456)}
+                        onClickFunc={() => console.log(456)}
                     />
                 </StyleContentForm>
             </StyleContentContainer>

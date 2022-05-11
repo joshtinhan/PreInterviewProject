@@ -41,3 +41,8 @@ export const StyleContentRow = styled.div`
 
 `
 
+export const StyleErrorMessage = styled.div`
+    position:absolute;
+    color:red;
+`
+

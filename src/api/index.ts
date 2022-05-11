@@ -10,6 +10,23 @@ const apiClient = axios.create({
 // yuntest@mailinator.com 
 // A123456
 
+apiClient.interceptors.response.use(
+  function (response) {
+    const {data,status} = response;
+    return {
+      data,
+      status
+    }
+  },
+  function (err) {
+    const {response:{data:{errors},status}} = err;
+    return{
+      data:errors,
+      status
+    }
+  }
+)
+
 export const getPost = () => apiClient.get("/post/analysis?per_page=12&page=1")
 export const getPostList = () => apiClient.get("/me/user/favourite/post-analysis")
 export const favoritePost = (postId: string) => apiClient.post(`/me/user/favourite/post-analysis/${postId}`)

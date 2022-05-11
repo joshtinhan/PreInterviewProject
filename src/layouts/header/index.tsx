@@ -1,9 +1,9 @@
 import { useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 import Button from '@/components/button'
 import { StyleHeader } from './style'
 import { colors } from '@/global/style'
-import { GetUserToken } from '@/services'
-import {useQueries} from 'react-query'
+import { useQueries } from 'react-query'
 const { themeBlueColor } = colors
 interface Props {
     currentRoutes: string
@@ -11,7 +11,7 @@ interface Props {
 
 const Header = (props: Props) => {
     const [hasToken, setHastoken] = useState<boolean>(false)
-
+    const navigate = useNavigate()
     return (
         <StyleHeader>
             <div className='headr_left'>
@@ -29,21 +29,21 @@ const Header = (props: Props) => {
                             size='small'
                             textColor='white'
                             backgroundColor={themeBlueColor}
-                            onClickFunc={()=>console.log(123)}
+                            onClickFunc={() => console.log(123)}
                         />
                         <Button
                             buttonText={'Logout'}
                             size={'small'}
                             textColor={'theme'}
-                            onClickFunc={()=>console.log(456)}
+                            onClickFunc={() => console.log(456)}
                         />
                     </>
                 ) : (
                     <Button
-                            buttonText={'login'}
-                            size={'small'}
-                            textColor={'theme'}
-                            onClickFunc={()=>GetUserToken({email:"yuntest@mailinator.com",password:"A123456"})}
+                        buttonText={'login'}
+                        size={'small'}
+                        textColor={'theme'}
+                        onClickFunc={() => navigate('/login')}
                     />
                 )}
             </div>

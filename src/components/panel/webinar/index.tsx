@@ -6,30 +6,42 @@ import {
     StyleWrapper,
     StylePanelFooter,
 } from './style'
+import { PostListData } from '@/interfaces'
+
 interface Props {
-    webinarData: object
+    webinarData: PostListData
 }
 
 const Webinar = (props: Props) => {
-    const { webinarData } = props
+    const {
+        webinarData: {
+            id,
+            title,
+            created_at,
+            content: { blocks },
+            favourited,
+        },
+    } = props
+    console.log(blocks[0]['123456'])
+
     return (
         <StyleWrapper>
-            <StyleSpanTitle className='title'>31/10/2019</StyleSpanTitle>
-            <StyleSpanTitle className='title'>
-                A structured approach to deciphering FX & Gold sentiment
-            </StyleSpanTitle>
+            <StyleSpanTitle className='title'>{created_at}</StyleSpanTitle>
+            <StyleSpanTitle className='title'>{title}</StyleSpanTitle>
             <StyleSpanContent className='content'>
-                A structured approach to deciphering FX & Gold sentiment
+                {blocks[0]['text']}
             </StyleSpanContent>
             <StyleSpanContent className='content'>
-                7pm-8:30pm EST
+                {created_at}
             </StyleSpanContent>
-            <StylePanelFooter className='panel-footer'>
-                <span>Register Now</span>
-                <a href=''>
-                    <img src={RegisterButton} alt='' />
-                </a>
-            </StylePanelFooter>
+            {!favourited ? (
+                <StylePanelFooter className='panel-footer'>
+                    <span>Register Now</span>
+                    <a href=''>
+                        <img src={RegisterButton} alt='' />
+                    </a>
+                </StylePanelFooter>
+            ) : null}
         </StyleWrapper>
     )
 }

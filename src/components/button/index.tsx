@@ -5,18 +5,19 @@ interface Props {
     size: string
     backgroundColor?: string
     textColor: string
-    onClickFunc: () => void;
+    onClickFunc: () => void
 }
 
 const Button = (props: Props) => {
-    const { buttonText, size, backgroundColor, textColor,onClickFunc } = props
+    const { buttonText, size, backgroundColor, textColor, onClickFunc } = props
     return (
         <StyledButtonContainer
+            onClick={onClickFunc}
             size={size}
             backgroundColor={backgroundColor}
             textColor={textColor}
         >
-            <span className='button_text' onClick={onClickFunc}>{buttonText}</span>
+            <span className='button_text'>{buttonText}</span>
         </StyledButtonContainer>
     )
 }
