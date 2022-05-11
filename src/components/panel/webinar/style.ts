@@ -11,6 +11,16 @@ export const StyleWrapper = styled.div`
     border-radius: 4px;
     margin:10px;
 `
+export const StyleContentContainer = styled.div`
+    height:80%;
+    display: flex;
+    flex-direction: column;
+`
+
+export const StyleFooterContainer = styled.div`
+    height:20%;
+`
+
 export const StyleSpanTitle = styled.span`
     font-family: 'Poppins';
     font-style: normal;
@@ -29,9 +39,12 @@ export const StyleSpanContent = styled.span`
     line-height: 20px;
     color:${lightGrayColor};
     padding: 10px 6px;
+    overflow-y:scroll;
 `
 
 export const StylePanelFooter = styled.div`
+    position:relative;
+    margin-bottom:0;
     display: flex;
     justify-content:space-between;
     align-items: center;

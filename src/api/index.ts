@@ -10,6 +10,17 @@ const apiClient = axios.create({
 // yuntest@mailinator.com 
 // A123456
 
+apiClient.interceptors.request.use(
+  function (config) {
+    return {
+      ...config,
+      headers: {
+        authorization:`Bearer ${localStorage.getItem("token")}`
+      }
+    }
+  }
+)
+
 apiClient.interceptors.response.use(
   function (response) {
     const {data,status} = response;

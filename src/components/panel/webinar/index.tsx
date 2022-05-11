@@ -5,11 +5,14 @@ import {
     StyleSpanContent,
     StyleWrapper,
     StylePanelFooter,
+    StyleContentContainer,
+    StyleFooterContainer,
 } from './style'
 import { PostListData } from '@/interfaces'
 
 interface Props {
     webinarData: PostListData
+    propFunc: () => void
 }
 
 const Webinar = (props: Props) => {
@@ -20,28 +23,30 @@ const Webinar = (props: Props) => {
             created_at,
             content: { blocks },
             favourited,
+            expiredDate,
         },
+        propFunc,
     } = props
-    console.log(blocks[0]['123456'])
-
     return (
         <StyleWrapper>
-            <StyleSpanTitle className='title'>{created_at}</StyleSpanTitle>
-            <StyleSpanTitle className='title'>{title}</StyleSpanTitle>
-            <StyleSpanContent className='content'>
-                {blocks[0]['text']}
-            </StyleSpanContent>
-            <StyleSpanContent className='content'>
-                {created_at}
-            </StyleSpanContent>
-            {!favourited ? (
+            <StyleContentContainer>
+                <StyleSpanTitle className='title'>{created_at}</StyleSpanTitle>
+                <StyleSpanTitle className='title'>{title}</StyleSpanTitle>
+                <StyleSpanContent className='content'>
+                    {blocks[0].text}
+                </StyleSpanContent>
+                <StyleSpanContent className='content'>
+                    {expiredDate}
+                </StyleSpanContent>
+            </StyleContentContainer>
+            <StyleFooterContainer>
                 <StylePanelFooter className='panel-footer'>
-                    <span>Register Now</span>
-                    <a href=''>
+                    <span>{!favourited ? 'Register Now' : 'Unregister'}</span>
+                    <a href='javascript:void(0)' onClick={propFunc}>
                         <img src={RegisterButton} alt='' />
                     </a>
                 </StylePanelFooter>
-            ) : null}
+            </StyleFooterContainer>
         </StyleWrapper>
     )
 }
