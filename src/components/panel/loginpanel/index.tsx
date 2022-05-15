@@ -10,6 +10,7 @@ import {
     StyleContentContainer,
     StyleErrorMessage,
 } from '../register/style'
+import { useQuery } from 'react-query'
 
 enum ActionKind {
     EMAIL = 'email',

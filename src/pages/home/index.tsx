@@ -16,10 +16,11 @@ import {
     StyleWebinarsSection,
 } from './style'
 import { getPostList, getPost } from '@/api'
-import { useQuery, QueryCache } from 'react-query'
+import { useQuery, QueryCache, useQueryClient } from 'react-query'
 import { PostListData } from '@/interfaces'
 import moment from 'moment'
 import { useNavigate } from 'react-router-dom'
+import {} from '@/hooks'
 
 const Container = () => {
     const navigate = useNavigate()

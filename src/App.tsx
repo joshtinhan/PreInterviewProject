@@ -1,51 +1,73 @@
-import React, { Suspense, useContext, useRef, createContext } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useMutation, useQuery } from 'react-query'
+import React, {
+    Suspense,
+    useContext,
+    useRef,
+    createContext,
+    ReactNode,
+    ElementType,
+    FunctionComponent,
+} from 'react'
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    useLocation,
+    useNavigate,
+    Navigate,
+} from 'react-router-dom'
+import AuthProvider, { AuthContext } from '@/provider/AuthProvider'
 import { routes } from './routers'
 import { checkUserToken } from '@/api'
 import { AxiosResponse } from 'axios'
+import { useGetUserInfo } from '@/hooks'
 // const AuthProvider = (props: any) => {
 
 //     return <AuthContext.Provider value={accessTokenRef}></AuthContext.Provider>
 // }
+interface ResData {
+    status?: number
+    data?: any
+}
 
 function App() {
-    const AuthContext = createContext<AxiosResponse | null>(null)
-    const AuthContextProvider = (props: any) => {
-        const { data } = useQuery('userData', checkUserToken, {
-            refetchInterval: 300000,
-            refetchIntervalInBackground: true,
-        })
-        console.log(data)
+    const useAuth = () => {
+        return useContext(AuthContext)
+    }
 
-        return (
-            <AuthContext.Provider value={data}>
-                {props.children}
-            </AuthContext.Provider>
+    const RequireAuth = ({ children }: { children: JSX.Element }) => {
+        const auth = useAuth()
+        return auth?.status === 200 ? (
+            children
+        ) : (
+            <Navigate to='/login' replace />
         )
     }
     return (
-        <AuthContextProvider
-            children={
-                <BrowserRouter>
-                    <Routes>
-                        {routes.map(({ element: Element, path }, i) => {
+        <BrowserRouter>
+            <AuthProvider>
+                <Routes>
+                    {routes.map(
+                        ({ element: Element, path, requireAuth }, i) => {
                             return (
                                 <Route
                                     key={i}
                                     path={path}
                                     element={
-                                        <Suspense fallback={<>...</>}>
+                                        requireAuth ? (
+                                            <RequireAuth>
+                                                <Element />
+                                            </RequireAuth>
+                                        ) : (
                                             <Element />
-                                        </Suspense>
+                                        )
                                     }
                                 />
                             )
-                        })}
-                    </Routes>
-                </BrowserRouter>
-            }
-        ></AuthContextProvider>
+                        }
+                    )}
+                </Routes>
+            </AuthProvider>
+        </BrowserRouter>
     )
 }
 

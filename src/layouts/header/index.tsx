@@ -1,17 +1,28 @@
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import Button from '@/components/button'
 import { StyleHeader } from './style'
 import { colors } from '@/global/style'
-import { useQueries } from 'react-query'
+import { AuthContext } from '@/provider/AuthProvider'
+import { logOutAction } from '@/services'
+import { useMutation, useQueryClient } from 'react-query'
+import { useGetUserInfo, useClearUserInfo } from '@/hooks'
+import { userLogout } from '@/api'
 const { themeBlueColor } = colors
 interface Props {
     currentRoutes: string
 }
 
 const Header = (props: Props) => {
+    const data = useGetUserInfo()
+    console.log(data)
+
+    const queryClient = useQueryClient()
     const [hasToken, setHastoken] = useState<boolean>(false)
     const navigate = useNavigate()
+    useMutation(userLogout, {
+        onSuccess: () => console.log(123),
+    })
     return (
         <StyleHeader>
             <div className='headr_left'>
@@ -22,8 +33,9 @@ const Header = (props: Props) => {
             </div>
 
             <div className='header_right'>
-                {hasToken ? (
+                {data ? (
                     <>
+                        <span>Hello {data?.data?.name}</span>
                         <Button
                             buttonText='My Webinar'
                             size='small'
@@ -35,7 +47,11 @@ const Header = (props: Props) => {
                             buttonText={'Logout'}
                             size={'small'}
                             textColor={'theme'}
-                            onClickFunc={() => console.log(456)}
+                            onClickFunc={() => {
+                                logOutAction()
+                                data.remove()
+                                data.refetch()
+                            }}
                         />
                     </>
                 ) : (

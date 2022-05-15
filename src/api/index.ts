@@ -21,22 +21,22 @@ apiClient.interceptors.request.use(
   }
 )
 
-apiClient.interceptors.response.use(
-  function (response) {
-    const {data,status} = response;
-    return {
-      data,
-      status
-    }
-  },
-  function (err) {
-    const {response:{data:{errors},status}} = err;
-    return{
-      data:errors,
-      status
-    }
-  }
-)
+// apiClient.interceptors.response.use(
+//   function (response) {
+//     const {data,status} = response;
+//     return {
+//       data,
+//       status
+//     }
+//   },
+//   function (err) {
+//     const {response:{data:{errors},status}} = err;
+//     return{
+//       data:errors,
+//       status
+//     }
+//   }
+// )
 
 export const getPost = () => apiClient.get("/post/analysis?per_page=12&page=1")
 export const getPostList = () => apiClient.get("/me/user/favourite/post-analysis")
