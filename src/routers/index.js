@@ -1,4 +1,3 @@
-import { lazy } from 'react'
 import Home from '../pages/home'
 import Login from '../pages/login'
 import MyWebnars from '../pages/myWebnars'

@@ -5,18 +5,21 @@ import { useQueryClient } from 'react-query'
 
 export const loginFlow = async (props:UserLoginInterface) => {
     const { email, password } = props
-    const { data, status } = await userLogin(email, password)
-    if (status === 200) {
-        const { auth: {access_token} } = data
-        localStorage.setItem("token", access_token)
-        return  true
+    try{
+        const { data, status } = await userLogin(email, password)
+        if (status === 200) {
+            const { auth: {access_token} } = data
+            localStorage.setItem("token", access_token)
+            return  true
+        }
+    }catch(err){
+        return false
     }
-    return false
 }
 
 export const logOutAction = async () => {
     localStorage.removeItem("token")
-    const result = await userLogout()
+    await userLogout()
 }
 
 // export const checkUserToken = async () => {

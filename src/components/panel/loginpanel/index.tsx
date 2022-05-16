@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useReducer } from 'react'
+import { useState, useReducer } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '@/components/button'
-import { userLogin } from '@/api'
 import { loginFlow } from '@/services'
 import {
     StyleContainer,
@@ -9,8 +8,10 @@ import {
     StyleTitle,
     StyleContentContainer,
     StyleErrorMessage,
+    StyleContentRow,
 } from '../register/style'
-import { useQuery } from 'react-query'
+import { colors } from '@/global/style'
+const { darkGray, lightGray, buttonBgGray } = colors
 
 enum ActionKind {
     EMAIL = 'email',
@@ -61,6 +62,8 @@ const LoginPanel = () => {
 
     const handleLogin = async () => {
         const res = await loginFlow({ email, password })
+        console.log(res)
+
         if (res) {
             return navigate('/')
         }
@@ -84,7 +87,7 @@ const LoginPanel = () => {
                     <h2>Login</h2>
                 </StyleTitle>
                 <StyleContentForm>
-                    <div className='content-row'>
+                    <StyleContentRow>
                         <label />
                         <input
                             value={email}
@@ -92,11 +95,8 @@ const LoginPanel = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             onFocus={handleFocus}
                         />
-                        <span className='error-message'>
-                            {state.emailError}
-                        </span>
-                    </div>
-                    <div className='content-row'>
+                    </StyleContentRow>
+                    <StyleContentRow>
                         <label />
                         <input
                             value={password}
@@ -108,12 +108,13 @@ const LoginPanel = () => {
                         <StyleErrorMessage>
                             {state.passwordError}
                         </StyleErrorMessage>
-                    </div>
+                    </StyleContentRow>
                     <Button
                         buttonText='Login'
                         size='large'
-                        backgroundColor='lightGray'
-                        textColor='darkGray'
+                        backgroundColor={buttonBgGray}
+                        textColor={email && password ? darkGray : lightGray}
+                        borderColor='none'
                         onClickFunc={() => handleLogin()}
                     />
                 </StyleContentForm>

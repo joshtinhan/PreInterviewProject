@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-
+import {colors} from '@/global/style'
+const {middleGray} = colors
 export const StyleHeader = styled.div`
     display: flex;
     justify-content: space-between;
@@ -15,5 +16,10 @@ export const StyleHeader = styled.div`
     }
     .header_right{
         display: flex;
+    }
+    .greetingText{
+        display:flex;
+        align-items: center;
+        color:${middleGray}
     }
 `

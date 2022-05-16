@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { colors } from '@/global/style'
-const { themeBlueColor,lightGrayColor,greenColor } = colors
+const { themeBlueColor, greenColor ,bannerGrayColor} = colors
+
+
 
 export const StyleWrapper = styled.div`
     display: flex;
@@ -9,7 +11,6 @@ export const StyleWrapper = styled.div`
     height: 300px;
     width: 380px;
     border-radius: 4px;
-    margin:10px;
 `
 export const StyleContentContainer = styled.div`
     height:80%;
@@ -19,6 +20,7 @@ export const StyleContentContainer = styled.div`
 
 export const StyleFooterContainer = styled.div`
     height:20%;
+   
 `
 
 export const StyleSpanTitle = styled.span`
@@ -37,9 +39,15 @@ export const StyleSpanContent = styled.span`
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color:${lightGrayColor};
+    color:${bannerGrayColor};
     padding: 10px 6px;
     overflow-y:scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
 `
 
 export const StylePanelFooter = styled.div`
@@ -49,7 +57,6 @@ export const StylePanelFooter = styled.div`
     justify-content:space-between;
     align-items: center;
     padding: 20px 6px;
-    
     span{
         color:${greenColor};
         font-family: 'Poppins';

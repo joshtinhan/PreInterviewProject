@@ -45,9 +45,9 @@ export const StyleWebinarsContainer = styled.div`
 export const StyleWebinarsSection = styled.div`
     display: flex;
     flex-wrap:wrap;
-    justify-content:space-between;
     align-items:center;
     padding: 80px 0;
+    gap: 20px calc((100% - 1140px) / 2);
 `
 
 export const StyleRegisterSection = styled.div`

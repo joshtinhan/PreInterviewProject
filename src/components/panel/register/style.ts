@@ -38,11 +38,49 @@ export const StyleContentForm = styled.div`
 `
 
 export const StyleContentRow = styled.div`
-
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    color:${middleGray};
+    input, select{
+        border: 1px solid #C6C6C6;
+        height:40px;
+    }
+`
+    
+export const StyleRowTitle = styled.div`
+    padding-bottom:8px;
+`
+    
+export const StyleErrorMessage = styled.span`
+    color:red;
 `
 
-export const StyleErrorMessage = styled.div`
-    position:absolute;
-    color:red;
+export const StyleSelectBox = styled.div`
+width:100%;
+position:relative;
+display:block;
+    &:after{
+        position:absolute;
+        content: '>';
+        color:#6D7278;;
+        display: inline-block;
+        font-weight:bold;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        right: 10px;
+        top:30%;
+        
+    }
+    select{
+        height:52px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width:100%;
+        text-indent:1px;
+        text-overflow: '';
+    }
 `
 

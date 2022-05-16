@@ -1,42 +1,16 @@
-import React, {
-    Suspense,
-    useContext,
-    useRef,
-    createContext,
-    ReactNode,
-    ElementType,
-    FunctionComponent,
-} from 'react'
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-    useLocation,
-    useNavigate,
-    Navigate,
-} from 'react-router-dom'
-import AuthProvider, { AuthContext } from '@/provider/AuthProvider'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import AuthProvider from '@/provider/AuthProvider'
+import { useQuery } from 'react-query'
 import { routes } from './routers'
 import { checkUserToken } from '@/api'
-import { AxiosResponse } from 'axios'
-import { useGetUserInfo } from '@/hooks'
-// const AuthProvider = (props: any) => {
-
-//     return <AuthContext.Provider value={accessTokenRef}></AuthContext.Provider>
-// }
-interface ResData {
-    status?: number
-    data?: any
-}
 
 function App() {
-    const useAuth = () => {
-        return useContext(AuthContext)
-    }
-
     const RequireAuth = ({ children }: { children: JSX.Element }) => {
-        const auth = useAuth()
-        return auth?.status === 200 ? (
+        const auth = useQuery('userInfo', checkUserToken, {
+            select: (value) => value.data,
+        })
+
+        return auth?.status == 'success' ? (
             children
         ) : (
             <Navigate to='/login' replace />
