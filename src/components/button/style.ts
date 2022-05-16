@@ -19,5 +19,6 @@ export const StyledButtonContainer = styled.div<ContainterProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${({backgroundColor})=> backgroundColor}
+    background-color: ${({ backgroundColor }) => backgroundColor};
+    cursor:pointer;
 ` 

@@ -62,8 +62,6 @@ const LoginPanel = () => {
 
     const handleLogin = async () => {
         const res = await loginFlow({ email, password })
-        console.log(res)
-
         if (res) {
             return navigate('/')
         }
