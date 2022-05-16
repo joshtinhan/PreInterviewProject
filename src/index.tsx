@@ -26,9 +26,9 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
-            <ReactQueryDevtools initialIsOpen={false} />
             <App />
-            <ReactQueryDevtools />
+            {/* <ReactQueryDevtools initialIsOpen={false} />
+            <ReactQueryDevtools /> */}
         </QueryClientProvider>
     </React.StrictMode>
 )
